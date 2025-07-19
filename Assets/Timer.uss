@@ -1,0 +1,4 @@
+.timer {
+    -unity-font-definition: url("project://database/Assets/Assets/Fonts/kenney_kenney-fonts/Fonts/Kenney%20Future%20Narrow.ttf?fileID=12800000&guid=281f0c49cf09e7b49b18bd17672c8b39&type=3#Kenney Future Narrow");
+    font-size: 60px;
+}
