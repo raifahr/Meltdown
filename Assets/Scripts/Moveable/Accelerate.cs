@@ -15,9 +15,9 @@ public class Accelerate : MonoBehaviour
 
     [Header("Mouse Settings")]
     public Camera mainCamera;
-    public float raycastPlaneY = 0f;
+    public float raycastPlaneY = 0.0f;
 
-    private float holdTime = 0f;
+    private float holdTime = 0.0f;
     private Rigidbody rb;
 
     void Start()
@@ -31,29 +31,29 @@ public class Accelerate : MonoBehaviour
 
     void Update()
     {
-        bool isHolding = Input.GetMouseButton(0) && currentStamina > 0f;
+        bool isHolding = Input.GetMouseButton(0) && currentStamina > 0.0f;
 
         if (isHolding)
         {
             holdTime += Time.deltaTime;
             currentStamina -= staminaDrainRate * Time.deltaTime;
-            currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
+            currentStamina = Mathf.Clamp(currentStamina, 0.0f, maxStamina);
         }
         else
         {
             holdTime = 0f;
             currentStamina += staminaRegenRate * Time.deltaTime;
-            currentStamina = Mathf.Clamp(currentStamina, 0f, maxStamina);
+            currentStamina = Mathf.Clamp(currentStamina, 0.0f, maxStamina);
         }
     }
 
     void FixedUpdate()
     {
-        if (Input.GetMouseButton(0) && currentStamina > 0f)
+        if (Input.GetMouseButton(0) && currentStamina > 0.0f)
         {
             // Get mouse world direction
             Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
-            Plane plane = new Plane(Vector3.up, new Vector3(0f, raycastPlaneY, 0f));
+            Plane plane = new Plane(Vector3.up, new Vector3(0.0f, raycastPlaneY, 0.0f));
 
             if (plane.Raycast(ray, out float distance))
             {
