@@ -1,9 +1,9 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerMovement : MonoBehaviour
+public class MouseFollow : MonoBehaviour
 {
-    public float forceMultiplier = 8.0f;
+    public float forceMultiplier = 12.0f;
     public Camera mainCamera;
     public float raycastPlaneY = 0.0f;
     public float rotationSpeed = 25.0f; // How fast the ship rotates
