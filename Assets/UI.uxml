@@ -1,0 +1,5 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/FlameBar.uss?fileID=7433441132597879392&amp;guid=cd722e164e9989c4d9e7697de5c1cc1c&amp;type=3#FlameBar" />
+    <Style src="project://database/Assets/Timer.uss?fileID=7433441132597879392&amp;guid=142442c304ccbcc4fa7fbcb6238f1d72&amp;type=3#Timer" />
+    <ui:Label text="Label" name="timer" class="timer" style="align-self: center; align-items: center;" />
+</ui:UXML>
