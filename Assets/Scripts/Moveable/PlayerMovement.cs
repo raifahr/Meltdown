@@ -36,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
             Vector3 DistanceScalar = mouseWorldPos - rb.position;
             DistanceScalar.y = 0.0f;
             float MoveDistance = DistanceScalar.magnitude;
-            Vector3 direction = (MoveDistance).normalized;
+            Vector3 direction = (DistanceScalar).normalized;
 
             rb.AddForce(direction * forceMultiplier);
 
