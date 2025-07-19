@@ -6,7 +6,9 @@ public class PlayerMovement : MonoBehaviour
     public float forceMultiplier = 10.0f;
     public Camera mainCamera;
     public float raycastPlaneY = 0.0f;
-    public float rotationSpeed = 10f; // How fast the ship rotates
+    public float rotationSpeed = 10.0f; // How fast the ship rotates
+    public float MinDistance = 20.0f; // How fast the ship rotates
+    public float MaxDistance = 100.0f; // How fast the ship rotates
 
     private Rigidbody rb;
 
@@ -25,9 +27,16 @@ public class PlayerMovement : MonoBehaviour
 
         if (plane.Raycast(ray, out float distance))
         {
+            if (distance < MinDistance || distance > MaxDistance)
+            {
+                return;
+            }
+
             Vector3 mouseWorldPos = ray.GetPoint(distance);
-            Vector3 direction = (mouseWorldPos - rb.position).normalized;
-            direction.y = 0.0f;
+            Vector3 DistanceScalar = mouseWorldPos - rb.position;
+            DistanceScalar.y = 0.0f;
+            float MoveDistance = DistanceScalar.magnitude;
+            Vector3 direction = (MoveDistance).normalized;
 
             rb.AddForce(direction * forceMultiplier);
 
