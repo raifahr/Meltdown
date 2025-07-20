@@ -2,12 +2,18 @@ using UnityEngine;
 
 public class burnable : MonoBehaviour
 {
+    [Header("Burn Settings")]
     public float darkenRate = 0.5f;
     public float destroyThreshold = 0.5f;
+
+    [Header("Particle Effects")]
     public ParticleSystem burnEffectPrefab;
+    public ParticleSystem smokeEffectPrefab;
 
     private ParticleSystem burnEffectInstance;
     private bool isBurning = false;
+    private bool smokePlayed = false;
+
     private Material materialInstance;
     private Color originalColor;
     private float darkenAmount = 0f;
@@ -26,7 +32,7 @@ public class burnable : MonoBehaviour
     {
         if (isBurning && materialInstance != null)
         {
-            if (burnEffectInstance == null)
+            if (burnEffectInstance == null && burnEffectPrefab != null)
             {
                 burnEffectInstance = Instantiate(burnEffectPrefab, transform.position, Quaternion.identity, transform);
                 burnEffectInstance.Play();
@@ -57,6 +63,12 @@ public class burnable : MonoBehaviour
         if (other.CompareTag("Flame"))
         {
             isBurning = true;
+
+            if (!smokePlayed && smokeEffectPrefab != null)
+            {
+                Instantiate(smokeEffectPrefab, transform.position, Quaternion.identity);
+                smokePlayed = true;
+            }
         }
     }
 
