@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   darkenRate: 0.5
-  destroyThreshold: 0.5
+  destroyThreshold: 0.65
   burnEffectPrefab: {fileID: 7913482279335060179, guid: b7e1be655a2d04dc595cd01e86b106a1, type: 3}
 --- !u!1 &7379941186925680760
 GameObject:
