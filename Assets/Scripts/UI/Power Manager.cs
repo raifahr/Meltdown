@@ -44,7 +44,6 @@ public class PowerManager : MonoBehaviour
         if (Health <= 0)
         {
             GameOverUI.rootVisualElement.visible = true;
-            Time.timeScale = 0.0f;
         }
         for (int button = 0; button < 2; button++)
         {

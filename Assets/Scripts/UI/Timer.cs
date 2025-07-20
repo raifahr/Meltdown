@@ -4,7 +4,7 @@ using UnityEngine.UIElements;
 public class CountdownTimer : MonoBehaviour
 {
     public UIDocument uiDocument;
-    public float countdownTime = 60f; // Total time in seconds
+    public float countdownTime = 90.0f; // Total time in seconds
     [SerializeField] private GameObject audioListener;
     [SerializeField] private UIDocument PauseUI;
     [SerializeField] private UIDocument GameOverUI;
@@ -62,6 +62,7 @@ public class CountdownTimer : MonoBehaviour
         {
             GameOverUI.rootVisualElement.visible = true;
             Time.timeScale = 0.0f;
+            return;
         }
 
         if (Input.GetKeyDown(KeyCode.Escape) && GameOverUI.rootVisualElement.visible == false)
