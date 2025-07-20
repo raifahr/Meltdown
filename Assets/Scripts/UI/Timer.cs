@@ -7,6 +7,7 @@ public class CountdownTimer : MonoBehaviour
     public float countdownTime = 60f; // Total time in seconds
     [SerializeField] private GameObject audioListener;
     [SerializeField] private UIDocument PauseUI;
+    [SerializeField] private UIDocument GameOverUI;
 
     private Label timerLabel;
     private Label ScoreLabel;
@@ -40,6 +41,7 @@ public class CountdownTimer : MonoBehaviour
         PauseButton.RegisterCallback<ClickEvent>(PauseClicked);
         SoundButton = root.Q<Button>("Sound");
         SoundButton.RegisterCallback<ClickEvent>(SoundClicked);
+        GameOverUI.rootVisualElement.visible = false;
     }
 
     private void PauseClicked(ClickEvent evt)
@@ -56,7 +58,13 @@ public class CountdownTimer : MonoBehaviour
     {
         audioListener.GetComponent<AudioListener>().enabled = SoundToggle;
 
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (currentTime <= 0.0f)
+        {
+            GameOverUI.rootVisualElement.visible = true;
+            Time.timeScale = 0.0f;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape) && GameOverUI.rootVisualElement.visible == false)
         {
             PauseToggle = !PauseToggle;
         }

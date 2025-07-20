@@ -11,14 +11,14 @@
                 <ui:DataBinding property="value" data-source-path="CurrAcceleration" data-source-type="PowerManager, Assembly-CSharp" binding-mode="ToTarget" />
             </Bindings>
         </ui:ProgressBar>
-        <ui:ProgressBar value="0" name="firepower" low-value="20" class="actionMeter" style="flex-direction: row; rotate: -90deg; align-self: flex-start; left: auto; bottom: -70%; scale: 8 2; right: -93%; width: 26px;">
-            <Bindings>
-                <ui:DataBinding property="value" data-source-path="CurrFirepower" data-source-type="PowerManager, Assembly-CSharp" binding-mode="ToTarget" />
-            </Bindings>
-        </ui:ProgressBar>
-        <ui:ProgressBar value="5" name="healthBar" low-value="0" high-value="5" class="actionMeter" style="flex-direction: row; rotate: 0; align-self: flex-start; left: auto; bottom: -85%; scale: 8 2; right: -75%; width: 26px;">
+        <ui:ProgressBar value="5" name="healthBar" low-value="0" high-value="5" class="actionMeter" style="flex-direction: row; rotate: 0; align-self: flex-start; left: auto; bottom: -85%; scale: 8 2; right: -80%; width: 26px; -unity-background-image-tint-color: rgb(88, 196, 108); background-color: rgba(136, 14, 14, 0);">
             <Bindings>
                 <ui:DataBinding property="value" data-source-path="Health" data-source-type="PowerManager, Assembly-CSharp" binding-mode="ToTarget" />
+            </Bindings>
+        </ui:ProgressBar>
+        <ui:ProgressBar value="0" name="firepower" low-value="20" class="actionMeter" style="flex-direction: row; rotate: -90deg; align-self: flex-start; left: auto; bottom: -70%; scale: 8 2; right: -90%; width: 26px;">
+            <Bindings>
+                <ui:DataBinding property="value" data-source-path="CurrFirepower" data-source-type="PowerManager, Assembly-CSharp" binding-mode="ToTarget" />
             </Bindings>
         </ui:ProgressBar>
     </ui:VisualElement>
