@@ -1,0 +1,10 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/FlameBar.uss?fileID=7433441132597879392&amp;guid=cd722e164e9989c4d9e7697de5c1cc1c&amp;type=3#FlameBar" />
+    <Style src="project://database/Assets/Timer.uss?fileID=7433441132597879392&amp;guid=142442c304ccbcc4fa7fbcb6238f1d72&amp;type=3#Timer" />
+    <ui:Label text="60:00" name="timer" class="timer" style="align-self: center; align-items: center;" />
+    <ui:VisualElement enabled="true" style="flex-grow: 1; flex-direction: row;">
+        <ui:Button name="Pause" style="background-image: url(&quot;project://database/Assets/Assets/UI/kenney_game-icons/PNG/White/2x/gear.png?fileID=2800000&amp;guid=5837376e546733d49b4a9aec7f7c93cf&amp;type=3#gear&quot;); height: 8%; width: 4.5%; background-position-y: top 0%; background-position-x: left 0; translate: 0 -120%; transform-origin: left top; padding-right: 10px; padding-left: 10px; margin-right: 2px; margin-left: 2px; min-width: 4.5%; min-height: 8%; max-width: 4.5%; max-height: 8%; left: 1%; top: 10%; transition-property: flex-grow; transition-duration: 1s;" />
+        <ui:Button name="Sound" style="background-image: url(&quot;project://database/Assets/Assets/UI/kenney_game-icons/PNG/White/2x/musicOn.png?fileID=2800000&amp;guid=8ccc0629c7290a749b830b9b8e72de22&amp;type=3#musicOn&quot;); height: 8%; width: 4.5%; background-position-y: top 0%; background-position-x: left 0; translate: 0 -120%; transform-origin: left top; padding-right: 10px; padding-left: 10px; margin-right: 2px; margin-left: 2px; min-width: 4.5%; min-height: 8%; max-width: 4.5%; max-height: 8%; left: 1%; top: 10%; transition-property: flex-grow; transition-duration: 1s;" />
+        <ui:Label text="Score: 0&#10;" name="Score" class="timer" style="align-self: flex-end; align-items: flex-end; right: 8%; top: 0%; justify-content: flex-start;" />
+    </ui:VisualElement>
+</ui:UXML>

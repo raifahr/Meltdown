@@ -1,0 +1,4 @@
+.fireBar {
+    -unity-font-definition: url("project://database/Assets/Assets/Fonts/kenney_kenney-fonts/Fonts/Kenney%20Blocks.ttf?fileID=12800000&guid=d31b6025e7c2b3147806e010eec4f2c9&type=3#Kenney Blocks");
+    -unity-text-align: lower-center;
+}

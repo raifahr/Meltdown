@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <SunMeter name="SunMeter" progress="60" style="bottom: auto; left: auto; align-content: flex-end; -unity-text-align: lower-center; width: 15%; height: 15%; align-self: center; justify-content: flex-end; align-items: center; translate: 0 550%; transform-origin: bottom; opacity: 0.5;">
+        <Bindings>
+            <ui:DataBinding property="progress" data-source-path="CurrPower" data-source-type="PowerManager, Assembly-CSharp" binding-mode="ToTarget" />
+        </Bindings>
+    </SunMeter>
+</ui:UXML>
