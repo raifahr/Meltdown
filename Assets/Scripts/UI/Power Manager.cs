@@ -81,8 +81,8 @@ public class PowerManager : MonoBehaviour
         else
         {
             CurrPower += GrowRate * Time.deltaTime;
-            CurrAcceleration -= EnergyConsumptionVal;
-            CurrFirepower -= EnergyConsumptionVal;
+            CurrAcceleration -= EnergyConsumptionVal/2;
+            CurrFirepower -= EnergyConsumptionVal/2;
         }
 
         CurrPower = Mathf.Clamp(CurrPower, 0.0f, MaxPower);
