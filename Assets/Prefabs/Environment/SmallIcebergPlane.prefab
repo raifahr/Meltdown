@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shrinkRate: 0.8
-  scaleToDestroyAt: 0.2
+  scaleToDestroyAt: 0.6
   steamParticlePrefab: {fileID: 7913482279335060179, guid: 4d338ac458d7a431bb2a105a0e176b26, type: 3}
 --- !u!54 &1710693678545046515
 Rigidbody:

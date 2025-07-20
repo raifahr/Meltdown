@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 43434948673023200}
-  - component: {fileID: 3479554205569515480}
   - component: {fileID: 1450597248472262858}
   - component: {fileID: 8224534224217272702}
+  - component: {fileID: 3479554205569515480}
   m_Layer: 0
   m_Name: IcebergBunker
   m_TagString: Iceberg
@@ -35,21 +35,6 @@ Transform:
   - {fileID: 4966532949397516228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3479554205569515480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2477924341642618372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb0ed0337d48a4b848fa6611068137f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  shrinkRate: 0.8
-  scaleToDestroyAt: 0.5
-  steamParticlePrefab: {fileID: 7913482279335060179, guid: 4d338ac458d7a431bb2a105a0e176b26, type: 3}
 --- !u!54 &1450597248472262858
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -98,6 +83,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6560502, y: 0.57944787, z: 0.91286826}
   m_Center: {x: 0.041003227, y: 0.21027605, z: 0.048691273}
+--- !u!114 &3479554205569515480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477924341642618372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb0ed0337d48a4b848fa6611068137f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shrinkRate: 0.8
+  scaleToDestroyAt: 0.6
+  steamParticlePrefab: {fileID: 7913482279335060179, guid: 4d338ac458d7a431bb2a105a0e176b26, type: 3}
 --- !u!1001 &4856589151725799471
 PrefabInstance:
   m_ObjectHideFlags: 0
