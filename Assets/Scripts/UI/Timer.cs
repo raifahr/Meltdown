@@ -13,6 +13,7 @@ public class CountdownTimer : MonoBehaviour
     private Button PauseButton;
     private Button SoundButton;
     private float currentTime;
+    public int Score = 0;
 
     public bool SoundToggle = true;
     public bool PauseToggle = true;
@@ -72,5 +73,7 @@ public class CountdownTimer : MonoBehaviour
 
             timerLabel.text = $"{minutes:00}:{seconds:00}";
         }
+
+        ScoreLabel.text = "Score: " + Score.ToString();
     }
 }
