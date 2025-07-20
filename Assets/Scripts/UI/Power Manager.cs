@@ -5,6 +5,9 @@ using UnityEngine.UIElements;
 public class PowerManager : MonoBehaviour
 {
     public float CurrPower = 0.0f;
+    public float CurrAcceleration = 0.0f;
+    public float CurrFirepower = 0.0f;
+    public int Health = 5;
     private float MaxPower = 100.0f;
     private float GrowRate = 10.0f;
     private float ConsumeRate = 25.0f;
@@ -47,15 +50,34 @@ public class PowerManager : MonoBehaviour
             mouseButtonMap[1] = false;
         }
 
-        if (!Boosting && !Firing)
+        float EnergyConsumptionVal = ConsumeRate * Time.deltaTime;
+
+        if (Boosting)
         {
-            CurrPower += GrowRate * Time.deltaTime;
+            CurrPower -= EnergyConsumptionVal;
+            CurrAcceleration += EnergyConsumptionVal;
+            CurrFirepower -= EnergyConsumptionVal;
+        }
+        else if (Firing)
+        {
+            CurrPower -= ConsumeRate * Time.deltaTime;
+            CurrFirepower += EnergyConsumptionVal;
+            CurrAcceleration -= EnergyConsumptionVal;
         }
         else
         {
-            CurrPower -= ConsumeRate * Time.deltaTime;
+            CurrPower += GrowRate * Time.deltaTime;
+            CurrAcceleration -= EnergyConsumptionVal;
+            CurrFirepower -= EnergyConsumptionVal;
         }
 
         CurrPower = Mathf.Clamp(CurrPower, 0.0f, MaxPower);
+        CurrAcceleration = Mathf.Clamp(CurrAcceleration, 0.0f, MaxPower);
+        CurrFirepower = Mathf.Clamp(CurrFirepower, 0.0f, MaxPower);
+    }
+
+    public void ModifyHealth(int val)
+    {
+        Health += val;
     }
 }

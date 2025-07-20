@@ -9,5 +9,8 @@ public class MeterController : MonoBehaviour
     {
         VisualElement root = gameObject.GetComponent<UIDocument>().rootVisualElement;
         root.Q<SunMeter>().dataSource = PowerManager;
+        root.Q<ProgressBar>("acceleration").dataSource = PowerManager;
+        root.Q<ProgressBar>("firepower").dataSource = PowerManager;
+        root.Q<ProgressBar>("healthBar").dataSource = PowerManager;
     }
 }
