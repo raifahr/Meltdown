@@ -7,6 +7,7 @@ public class PowerManager : MonoBehaviour
     public float CurrPower = 0.0f;
     public float CurrAcceleration = 0.0f;
     public float CurrFirepower = 0.0f;
+    public int Health = 5;
     private float MaxPower = 100.0f;
     private float GrowRate = 10.0f;
     private float ConsumeRate = 25.0f;
@@ -73,5 +74,10 @@ public class PowerManager : MonoBehaviour
         CurrPower = Mathf.Clamp(CurrPower, 0.0f, MaxPower);
         CurrAcceleration = Mathf.Clamp(CurrAcceleration, 0.0f, MaxPower);
         CurrFirepower = Mathf.Clamp(CurrFirepower, 0.0f, MaxPower);
+    }
+
+    public void ModifyHealth(int val)
+    {
+        Health += val;
     }
 }
