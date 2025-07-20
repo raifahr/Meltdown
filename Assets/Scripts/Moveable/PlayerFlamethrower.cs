@@ -4,12 +4,14 @@ public class FlamethrowerController : MonoBehaviour
 {
     public GameObject flamethrower;
     public ParticleSystem flameParticles;
-    public PlayerStamina playerStamina;
 
     private Collider flameCollider;
+    private PlayerStamina stamina;
 
     void Start()
     {
+        stamina = GetComponent<PlayerStamina>();
+
         if (flamethrower != null)
         {
             flameCollider = flamethrower.GetComponent<Collider>();
@@ -18,30 +20,54 @@ public class FlamethrowerController : MonoBehaviour
 
         if (flameParticles != null)
         {
-            flameParticles.Stop();
+            flameParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
     }
 
     void Update()
     {
-        if (Input.GetMouseButton(1) && playerStamina.HasStamina())
+        bool isHolding = Input.GetMouseButton(1);
+
+        if (isHolding)
         {
-            if (!flameCollider.enabled)
-                flameCollider.enabled = true;
-
-            if (!flameParticles.isPlaying)
-                flameParticles.Play();
-
-            playerStamina.DrainStamina();
+            stamina.DrainStamina();
         }
         else
         {
+            stamina.RegenerateStamina();
+        }
+
+        bool canUseFlamethrower = isHolding && stamina.HasStamina();
+
+        // Activate flamethrower
+        if (canUseFlamethrower)
+        {
+            if (flameCollider != null && !flameCollider.enabled)
+            {
+                flameCollider.enabled = true;
+                Debug.Log("Collider enabled");
+            }
+
+            if (flameParticles != null && !flameParticles.isPlaying)
+            {
+                flameParticles.Play();
+                Debug.Log("Flame particles playing");
+            }
+        }
+        // Deactivate flamethrower
+        else
+        {
             if (flameCollider != null && flameCollider.enabled)
+            {
                 flameCollider.enabled = false;
+                Debug.Log("Collider disabled");
+            }
 
             if (flameParticles != null && flameParticles.isPlaying)
-                flameParticles.Stop();
+            {
+                flameParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                Debug.Log("Flame particles stopped");
+            }
         }
     }
 }
-

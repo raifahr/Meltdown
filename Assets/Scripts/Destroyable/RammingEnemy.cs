@@ -18,11 +18,11 @@ public class RammingEnemy : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             // inflicts da,age to player
-            PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.TakeDamage(damageToPlayer);
-            }
+            // PlayerHealth playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            // if (playerHealth != null)
+            // {
+            //     playerHealth.TakeDamage(damageToPlayer);
+            // }
 
             // effect
             if (explosionEffect != null)
