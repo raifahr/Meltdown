@@ -4,12 +4,15 @@ public class FlamethrowerController : MonoBehaviour
 {
     public GameObject flamethrower;
     public ParticleSystem flameParticles;
-    public PlayerStamina playerStamina;
 
     private Collider flameCollider;
 
+    private PlayerStamina stamina;
+
     void Start()
     {
+        stamina = GetComponent<PlayerStamina>();
+
         if (flamethrower != null)
         {
             flameCollider = flamethrower.GetComponent<Collider>();
@@ -24,7 +27,7 @@ public class FlamethrowerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButton(1) && playerStamina.HasStamina())
+        if (Input.GetMouseButton(1) && stamina.HasStamina())
         {
             if (!flameCollider.enabled)
                 flameCollider.enabled = true;
@@ -32,7 +35,7 @@ public class FlamethrowerController : MonoBehaviour
             if (!flameParticles.isPlaying)
                 flameParticles.Play();
 
-            playerStamina.DrainStamina();
+            stamina.DrainStamina();
         }
         else
         {
@@ -41,6 +44,7 @@ public class FlamethrowerController : MonoBehaviour
 
             if (flameParticles != null && flameParticles.isPlaying)
                 flameParticles.Stop();
+            stamina.RegenerateStamina(); 
         }
     }
 }
