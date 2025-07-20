@@ -9,8 +9,19 @@ public class MeterController : MonoBehaviour
     {
         VisualElement root = gameObject.GetComponent<UIDocument>().rootVisualElement;
         root.Q<SunMeter>().dataSource = PowerManager;
-        root.Q<ProgressBar>("acceleration").dataSource = PowerManager;
-        root.Q<ProgressBar>("firepower").dataSource = PowerManager;
-        root.Q<ProgressBar>("healthBar").dataSource = PowerManager;
+        var aBar = root.Q<ProgressBar>("acceleration");
+        var inneraBar = aBar.Q(className: "unity-progress-bar__progress");
+        aBar.dataSource = PowerManager;
+        inneraBar.style.backgroundColor = Color.blue;
+
+        var fBar = root.Q<ProgressBar>("firepower");
+        var innerfBar = fBar.Q(className: "unity-progress-bar__progress");
+        fBar.dataSource = PowerManager;
+        innerfBar.style.backgroundColor = Color.red;
+
+        var hBar = root.Q<ProgressBar>("healthBar");
+        var innerhBar = hBar.Q(className: "unity-progress-bar__progress");
+        innerhBar.style.backgroundColor = Color.green;
+        hBar.dataSource = PowerManager;
     }
 }

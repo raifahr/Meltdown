@@ -14,6 +14,7 @@ public class PowerManager : MonoBehaviour
     private float ConsumeRate; // drain
 
     public PlayerStamina stamina;
+    [SerializeField] private UIDocument GameOverUI;
 
     private Dictionary<int, bool> mouseButtonMap = new Dictionary<int, bool>()
     {
@@ -40,6 +41,11 @@ public class PowerManager : MonoBehaviour
 
     void Update()
     {
+        if (Health <= 0)
+        {
+            GameOverUI.rootVisualElement.visible = true;
+            Time.timeScale = 0.0f;
+        }
         for (int button = 0; button < 2; button++)
         {
             if (Input.GetMouseButtonDown(button))

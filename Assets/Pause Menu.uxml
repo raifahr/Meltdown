@@ -3,7 +3,6 @@
     <ui:VisualElement name="BackGround" style="flex-grow: 1; background-image: url(&quot;project://database/Assets/Assets/UI/kenney_ui-pack-space-expansion/PNG/Blue/Double/button_square_header_small_square_screws.png?fileID=2800000&amp;guid=b14d2ecaa1da3364d875ee100e90766e&amp;type=3#button_square_header_small_square_screws&quot;); align-self: center; height: 40%; width: 20%; min-height: 40%; max-height: 40%; top: 25%;">
         <ui:Label text="Pause" style="align-self: center; justify-content: space-evenly; align-items: flex-end; top: 8%; -unity-font-definition: url(&quot;project://database/Assets/Assets/Fonts/kenney_kenney-fonts/Fonts/Kenney%20Future%20Narrow.ttf?fileID=12800000&amp;guid=281f0c49cf09e7b49b18bd17672c8b39&amp;type=3#Kenney Future Narrow&quot;); font-size: 48px; color: rgb(249, 248, 248); width: 160px;" />
         <ui:Button text="Resume" name="resume" data-source-type="PauseMenu, Assembly-CSharp" class="MenuButton" style="padding-top: 5px; padding-right: 20px; padding-bottom: 5px; padding-left: 20px;" />
-        <ui:Button text="Controls" name="controls" data-source-type="PauseMenu, Assembly-CSharp" class="MenuButton" style="margin-top: 10px; margin-right: 10px; margin-bottom: 10px; margin-left: 10px;" />
         <ui:Button text="Quit" name="quit" data-source-type="PauseMenu, Assembly-CSharp" class="MenuButton" />
     </ui:VisualElement>
 </ui:UXML>

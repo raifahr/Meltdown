@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
@@ -19,11 +20,17 @@ public class PauseMenu : MonoBehaviour
         QuitButton = root.Q<Button>("quit");
 
         ResumeButton.RegisterCallback<ClickEvent>(ResumeClicked);
+        QuitButton.RegisterCallback<ClickEvent>(QuitClicked);
     }
 
     private void ResumeClicked(ClickEvent evt)
     {
         timer.PauseToggle = false;
+    }
+
+    private void QuitClicked(ClickEvent evt)
+    {
+        SceneManager.LoadScene(1);
     }
 
     // Update is called once per frame
