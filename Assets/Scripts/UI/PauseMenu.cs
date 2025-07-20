@@ -1,4 +1,3 @@
-using System.Xml.Linq;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -20,7 +19,6 @@ public class PauseMenu : MonoBehaviour
         QuitButton = root.Q<Button>("quit");
 
         ResumeButton.RegisterCallback<ClickEvent>(ResumeClicked);
-
     }
 
     private void ResumeClicked(ClickEvent evt)

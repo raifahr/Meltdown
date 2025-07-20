@@ -6,7 +6,7 @@ public class CountdownTimer : MonoBehaviour
     public UIDocument uiDocument;
     public float countdownTime = 60f; // Total time in seconds
     [SerializeField] private GameObject audioListener;
-    [SerializeField] private GameObject PauseUI;
+    [SerializeField] private UIDocument PauseUI;
 
     private Label timerLabel;
     private Label ScoreLabel;
@@ -15,7 +15,7 @@ public class CountdownTimer : MonoBehaviour
     private float currentTime;
 
     public bool SoundToggle = true;
-    public bool PauseToggle = false;
+    public bool PauseToggle = true;
 
     void Start()
     {
@@ -53,12 +53,12 @@ public class CountdownTimer : MonoBehaviour
         if (PauseToggle)
         {
             Time.timeScale = 0.0f;
-            PauseUI.SetActive(true);
+            PauseUI.rootVisualElement.visible = true;
         }
         else
         {
             Time.timeScale = 1.0f;
-            PauseUI.SetActive(false);
+            PauseUI.rootVisualElement.visible = false;
         }
 
         if (currentTime > 0)
