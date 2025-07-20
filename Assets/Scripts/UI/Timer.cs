@@ -14,9 +14,19 @@ public class CountdownTimer : MonoBehaviour
     private Button SoundButton;
     private float currentTime;
     public int Score = 0;
+    public float timeRemaining;
 
     public bool SoundToggle = true;
     public bool PauseToggle = true;
+
+
+    public static CountdownTimer Instance;
+
+    void Awake()
+    {
+        Instance = this;
+    }
+
 
     void Start()
     {
@@ -75,5 +85,7 @@ public class CountdownTimer : MonoBehaviour
         }
 
         ScoreLabel.text = "Score: " + Score.ToString();
+
+       timeRemaining = currentTime;
     }
 }

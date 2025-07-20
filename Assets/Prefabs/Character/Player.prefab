@@ -9875,7 +9875,7 @@ GameObject:
   - component: {fileID: 1666847662354042352}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9924,7 +9924,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!65 &299029581261957498
 BoxCollider:
@@ -10042,6 +10042,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   powerManager: {fileID: 4087837621333778949}
+  playerRigidbody: {fileID: 4487669650175307040}
+  knockbackForce: 5
+  damageCooldown: 0.25
 --- !u!1001 &6665137670575717742
 PrefabInstance:
   m_ObjectHideFlags: 0
