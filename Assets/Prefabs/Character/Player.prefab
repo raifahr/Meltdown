@@ -9872,6 +9872,7 @@ GameObject:
   - component: {fileID: 1217411887690088867}
   - component: {fileID: 6980920683354830661}
   - component: {fileID: 4087837621333778949}
+  - component: {fileID: 1666847662354042352}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -9994,9 +9995,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af421a0c26d3d51459641f0ebce9283b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxStamina: 3
-  staminaDrainRate: 1
-  staminaRegenRate: 0.5
+  maxStamina: 100
+  staminaDrainRate: 10
+  staminaRegenRate: 5
 --- !u!114 &6980920683354830661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10023,11 +10024,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a9eab7cf3bbbd4dad7491ffebec976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrPower: 3
+  CurrPower: 100
   CurrAcceleration: 0
   CurrFirepower: 0
   Health: 5
   stamina: {fileID: 1217411887690088867}
+--- !u!114 &1666847662354042352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8398537507292091441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3246743a661204f97b36c44f74b9d411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerManager: {fileID: 4087837621333778949}
 --- !u!1001 &6665137670575717742
 PrefabInstance:
   m_ObjectHideFlags: 0
