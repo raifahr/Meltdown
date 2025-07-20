@@ -6,7 +6,6 @@ public class FlamethrowerController : MonoBehaviour
     public ParticleSystem flameParticles;
 
     private Collider flameCollider;
-
     private PlayerStamina stamina;
 
     void Start()
@@ -21,31 +20,54 @@ public class FlamethrowerController : MonoBehaviour
 
         if (flameParticles != null)
         {
-            flameParticles.Stop();
+            flameParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
         }
     }
 
     void Update()
     {
-        if (Input.GetMouseButton(1) && stamina.HasStamina())
+        bool isHolding = Input.GetMouseButton(1);
+
+        if (isHolding)
         {
-            if (!flameCollider.enabled)
-                flameCollider.enabled = true;
-
-            if (!flameParticles.isPlaying)
-                flameParticles.Play();
-
             stamina.DrainStamina();
         }
         else
         {
+            stamina.RegenerateStamina();
+        }
+
+        bool canUseFlamethrower = isHolding && stamina.HasStamina();
+
+        // Activate flamethrower
+        if (canUseFlamethrower)
+        {
+            if (flameCollider != null && !flameCollider.enabled)
+            {
+                flameCollider.enabled = true;
+                Debug.Log("Collider enabled");
+            }
+
+            if (flameParticles != null && !flameParticles.isPlaying)
+            {
+                flameParticles.Play();
+                Debug.Log("Flame particles playing");
+            }
+        }
+        // Deactivate flamethrower
+        else
+        {
             if (flameCollider != null && flameCollider.enabled)
+            {
                 flameCollider.enabled = false;
+                Debug.Log("Collider disabled");
+            }
 
             if (flameParticles != null && flameParticles.isPlaying)
-                flameParticles.Stop();
-            stamina.RegenerateStamina(); 
+            {
+                flameParticles.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                Debug.Log("Flame particles stopped");
+            }
         }
     }
 }
-

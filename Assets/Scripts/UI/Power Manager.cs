@@ -8,9 +8,12 @@ public class PowerManager : MonoBehaviour
     public float CurrAcceleration = 0.0f;
     public float CurrFirepower = 0.0f;
     public int Health = 5;
+
     private float MaxPower = 100.0f;
-    private float GrowRate = 10.0f;
-    private float ConsumeRate = 25.0f;
+    private float GrowRate; // regen
+    private float ConsumeRate; // drain
+
+    public PlayerStamina stamina;
 
     private Dictionary<int, bool> mouseButtonMap = new Dictionary<int, bool>()
     {
@@ -21,13 +24,20 @@ public class PowerManager : MonoBehaviour
     public bool Boosting => mouseButtonMap[0];
     public bool Firing => mouseButtonMap[1];
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if (stamina != null)
+        {
+            GrowRate = stamina.staminaRegenRate;
+            ConsumeRate = stamina.staminaDrainRate;
+            CurrPower = MaxPower;
+        }
+        else
+        {
+            Debug.LogWarning("PowerManager: PlayerStamina reference not set!");
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
         for (int button = 0; button < 2; button++)
@@ -49,6 +59,10 @@ public class PowerManager : MonoBehaviour
             mouseButtonMap[0] = false;
             mouseButtonMap[1] = false;
         }
+
+        float delta = Time.deltaTime;
+        float energyUsed = ConsumeRate * delta;
+        float energyRegen = GrowRate * delta;
 
         float EnergyConsumptionVal = ConsumeRate * Time.deltaTime;
 
