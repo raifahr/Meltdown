@@ -19,6 +19,8 @@ public class MainMenu : MonoBehaviour
 
         StartButton.RegisterCallback<ClickEvent>(StartClicked);
         CreditsButton.RegisterCallback<ClickEvent>(CreditsClicked);
+        CreditsUI.rootVisualElement.visible = false;
+
     }
 
     private void CreditsClicked(ClickEvent evt)

@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class GameOverMenu : MonoBehaviour
 {
     public UIDocument uiDocument;
+    public UIDocument PauseMenu;
     private Button RestartButton;
     private Button QuitButton;
 
@@ -33,6 +34,6 @@ public class GameOverMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        PauseMenu.rootVisualElement.visible = false;
     }
 }
