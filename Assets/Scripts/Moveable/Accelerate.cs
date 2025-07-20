@@ -17,6 +17,9 @@ public class Accelerate : MonoBehaviour
     public Camera mainCamera;
     public float raycastPlaneY = 0.0f;
 
+    [Header("Effects")]
+    public ParticleSystem accelerationTrail;
+
     private float holdTime = 0.0f;
     private Rigidbody rb;
 
@@ -27,6 +30,9 @@ public class Accelerate : MonoBehaviour
 
         if (mainCamera == null)
             mainCamera = Camera.main;
+
+        if (accelerationTrail != null)
+            accelerationTrail.Stop();
     }
 
     void Update()
@@ -44,6 +50,20 @@ public class Accelerate : MonoBehaviour
             holdTime = 0f;
             currentStamina += staminaRegenRate * Time.deltaTime;
             currentStamina = Mathf.Clamp(currentStamina, 0.0f, maxStamina);
+        }
+
+        if (accelerationTrail != null)
+        {
+            if (isHolding)
+            {
+                if (!accelerationTrail.isPlaying)
+                    accelerationTrail.Play();
+            }
+            else
+            {
+                if (accelerationTrail.isPlaying)
+                    accelerationTrail.Stop();
+            }
         }
     }
 
