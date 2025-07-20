@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3479554205569515480}
   - component: {fileID: 1450597248472262858}
   - component: {fileID: 8224534224217272702}
+  - component: {fileID: 7556202170202207689}
   m_Layer: 0
   m_Name: IcebergBunker
   m_TagString: Iceberg
@@ -98,6 +99,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6560502, y: 0.57944787, z: 0.91286826}
   m_Center: {x: 0.041003227, y: 0.21027605, z: 0.048691273}
+--- !u!114 &7556202170202207689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2477924341642618372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0f0c041bcc5764f8444d4f0eee075a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 20
 --- !u!1001 &4856589151725799471
 PrefabInstance:
   m_ObjectHideFlags: 0

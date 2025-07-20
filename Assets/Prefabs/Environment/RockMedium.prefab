@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3848689065460828469}
   - component: {fileID: 762323228418141524}
   - component: {fileID: 1017957494150779554}
+  - component: {fileID: -5585879910677040470}
   m_Layer: 0
   m_Name: RockMedium
   m_TagString: Untagged
@@ -82,6 +83,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.7522025, y: 1.0008484, z: 1.318841}
   m_Center: {x: -0.034219265, y: 0.42868, z: 0.044152975}
+--- !u!114 &-5585879910677040470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123519020885952350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0f0c041bcc5764f8444d4f0eee075a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 20
 --- !u!1001 &7886707617936350066
 PrefabInstance:
   m_ObjectHideFlags: 0

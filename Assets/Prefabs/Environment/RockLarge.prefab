@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5083474203518541296}
   - component: {fileID: 4581465678171545499}
   - component: {fileID: 2099366753509906105}
+  - component: {fileID: -8196419387946150370}
   m_Layer: 0
   m_Name: RockLarge
   m_TagString: Untagged
@@ -82,6 +83,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &-8196419387946150370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4114457540551433231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f0f0c041bcc5764f8444d4f0eee075a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageAmount: 20
 --- !u!1001 &5614371788601596086
 PrefabInstance:
   m_ObjectHideFlags: 0
