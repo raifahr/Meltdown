@@ -1,0 +1,20 @@
+.MenuButton {
+    top: 15%;
+    align-self: center;
+    align-content: center;
+    justify-content: space-between;
+    background-image: url("project://database/Assets/Assets/UI/kenney_ui-pack-space-expansion/PNG/Blue/Double/bar_square_gloss_large_square.png?fileID=2800000&guid=4264090a34108264fb7a84f9fe850d4c&type=3#bar_square_gloss_large_square");
+    font-size: 24px;
+    left: auto;
+    right: auto;
+    margin-top: 15px;
+    margin-right: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    -unity-font-definition: url("project://database/Assets/Assets/Fonts/kenney_kenney-fonts/Fonts/Kenney%20Future%20Narrow.ttf?fileID=12800000&guid=281f0c49cf09e7b49b18bd17672c8b39&type=3#Kenney Future Narrow");
+    color: rgb(245, 245, 245);
+}
